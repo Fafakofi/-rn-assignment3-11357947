@@ -12,11 +12,11 @@ export default function App() {
 
   const [categories, setCategories] = useState([
     {name: 'exercise'},
-    {name: 'exercise'},
-    {name: 'exercise'},
-    {name: 'exercise'},
-    {name: 'exercise'},
-    {name: 'exercise'},
+    {name: 'studies'},
+    {name: 'coding'},
+    {name: 'sleeping'},
+    {name: 'eating'},
+    {name: 'Jumping'},
   ])
 
   return (
