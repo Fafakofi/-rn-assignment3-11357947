@@ -44,7 +44,8 @@ export default function App() {
           horizontal={true}
           renderItem={({item})=>(
             <View style={styles.catBoxes}>
-                <Text style={styles.item}> {item.name} </Text>
+                <Text style={styles.itemName}> {item.name} </Text>
+                <Text style={styles.taskNumber}>12 tasks</Text>
             </View>
           )}/>
 
@@ -97,6 +98,18 @@ const styles = StyleSheet.create({
     height: 170, 
     width: 170,
     borderRadius: 20
+  },
+
+  itemName:{
+    fontSize:15,
+    marginLeft:7,
+    marginTop:7,
+    fontWeight: 'bold'
+  },
+
+  taskNumber:{
+    marginLeft:7,
+    fontSize: 10
   }
 });
 
