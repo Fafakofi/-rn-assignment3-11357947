@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 
   greetings: {
     color: 'black',
-    marginTop: 30,
+    marginTop: 60,
     fontWeight: 'bold',
     fontSize: 30,
     marginLeft: 20
