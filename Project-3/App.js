@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View , Scrollview,
-  Textinput,
+  TextInput,
   Stylesheet,
   Button,
   FlatList,
@@ -13,6 +13,10 @@ export default function App() {
       <View>
         <Text style={styles.greetings}>Hello , Devs</Text>
         <Text style={styles.morale}>1443 tasks today. Good job!</Text>
+      </View>
+
+      <View>
+        <TextInput style={styles.searchBar}  placeholder='Search'/>
       </View>
       
       <StatusBar style="auto" />
@@ -36,7 +40,17 @@ const styles = StyleSheet.create({
 
   morale: {
     marginLeft: 20,
-    fontSize: 10
+    fontSize: 10, 
+    marginBottom: 10
+  },
+
+  searchBar: {
+    width:210,
+    margin: 20,
+    backgroundColor: 'white',
+    padding: 10,
+    borderRadius:15
+    
   }
 });
 
