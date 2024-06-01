@@ -8,18 +8,48 @@ import { StyleSheet, Text, View , Scrollview,
 import React, { useState } from 'react';
 
 export default function App() {
+
+
+  const [categories, setCategories] = useState([
+    {name: 'exercise'},
+    {name: 'exercise'},
+    {name: 'exercise'},
+    {name: 'exercise'},
+    {name: 'exercise'},
+    {name: 'exercise'},
+  ])
+
   return (
     <View style={styles.container}>
+
+       
+    <StatusBar style="auto" />  
+
       <View>
         <Text style={styles.greetings}>Hello , Devs</Text>
         <Text style={styles.morale}>1443 tasks today. Good job!</Text>
       </View>
 
       <View>
-        <TextInput style={styles.searchBar}  placeholder='Search'/>
+        <TextInput style={styles.searchBar}  placeholder='Search' placeholderTextColor="red"/>
       </View>
-      
-      <StatusBar style="auto" />
+
+      <View>
+          <Text style={styles.categories}> Categories</Text>
+      </View>
+
+      <View>
+        
+          <FlatList data={categories}
+          horizontal={true}
+          renderItem={({item})=>(
+            <View style={styles.catBoxes}>
+                <Text style={styles.item}> {item.name} </Text>
+            </View>
+          )}/>
+
+      </View>
+     
     </View>
   );
 }
@@ -49,8 +79,24 @@ const styles = StyleSheet.create({
     margin: 20,
     backgroundColor: 'white',
     padding: 10,
-    borderRadius:15
+    borderRadius:15, 
+    marginBottom: 40
     
+  },
+
+  categories:{
+    marginLeft: 20,
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 15
+  },
+
+  catBoxes:{
+    marginLeft: 20,
+    backgroundColor: 'white',
+    height: 170, 
+    width: 170,
+    borderRadius: 20
   }
 });
 
