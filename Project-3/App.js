@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View , Scrollview,
+import { StyleSheet, Text, View , ScrollView,
   TextInput,
 
   Button,
@@ -18,16 +18,26 @@ export default function App() {
     {name: 'sleeping'},
     {name: 'eating'},
     {name: 'Jumping'},
+    {name: 'Reading'},
+    {name: 'Swimming'},
   ]);
 
 
   const[task, setTask]= useState([
     {taskId: 'Web Development'},
-    {taskId: 'Web Development'},
-    {taskId: 'Web Development'},
-    {taskId: 'Web Development'},
-    {taskId: 'Web Development'},
-    {taskId: 'Web Development'}
+    {taskId: 'App Development'},
+    {taskId: 'UI/UX design'},
+    {taskId: 'Backend development'},
+    {taskId: 'Photoshop'},
+    {taskId: 'frontend Development'},
+    {taskId: 'Photography'},
+    {taskId: 'Database management'},
+    {taskId: 'system administration'},
+    {taskId: 'computer engineering'},
+    {taskId: 'Data science'},
+    {taskId: 'Cafe operating'},
+    {taskId: 'playing Football'},
+    {taskId: 'Project administering'},
   ]);
 
 
@@ -35,7 +45,7 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-       
+       <ScrollView>
       <StatusBar style="auto" />  
 
         <View style={styles.welcome}>
@@ -78,6 +88,7 @@ export default function App() {
               </View>
             )}/>
         </View>     
+        </ScrollView>
     </View>
     );
 }
