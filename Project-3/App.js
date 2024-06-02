@@ -45,8 +45,10 @@ export default function App() {
       </View>
       <Text style={styles.morale}>1443 tasks today. Good job!</Text>
 
-      <View>
+      <View style={styles.search}>
         <TextInput style={styles.searchBar}  placeholder='Search' placeholderTextColor="red"/>
+        <Image source={require('../Project-3/assets/image-1.jpg')} style={styles.image2}
+        resizeMode='contain'/>
       </View>
 
       <View>
@@ -154,6 +156,21 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     marginLeft: 120,
     borderRadius: 25
+  },
+
+  search:{
+    flexDirection: 'row',
+  },
+
+  image2:{
+    height: 90,
+    width:50,
+    marginRightTop: 20,
+    marginLeft: 50,
+    borderRadius: 34
   }
+
+
 });
 
+ 
