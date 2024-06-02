@@ -37,9 +37,14 @@ export default function App() {
     {taskId: 'Data science'},
     {taskId: 'Cafe operating'},
     {taskId: 'playing Football'},
-    {taskId: 'Project administering'},
+    {taskId: 'Project administering'}
   ]);
 
+    const[user, setUser]= useState('Devs');
+
+    const handleClick = ()=> {
+      setUser('user')
+    }
 
 
   return (
@@ -49,11 +54,19 @@ export default function App() {
       <StatusBar style="auto" />  
 
         <View style={styles.welcome}>
-          <Text style={styles.greetings}>Hello , Devs</Text>
+          <Text style={styles.greetings}>Hello {user}!!</Text>
           <Image source={require('../Project-3/assets/profile photo.jpg')} style={styles.image1}
           resizeMode='contain'/>
         </View>
         <Text style={styles.morale}>1443 tasks today. Good job!</Text>
+
+        <View style={styles.buttonContainer}>
+
+        <Button title='Click' onPress={handleClick}/>
+
+        </View>
+
+        
 
         <View style={styles.search}>
           <TextInput style={styles.searchBar}  placeholder='Search' placeholderTextColor="red"/>
@@ -195,6 +208,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     justifyContent:'center',
     alignItems: 'center'
+  },
+
+  buttonContainer:{
+    width:70,
+    marginLeft:20
   }
 
 
