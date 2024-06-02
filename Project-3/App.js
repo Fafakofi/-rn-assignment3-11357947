@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View , Scrollview,
   TextInput,
-  Stylesheet,
+
   Button,
   FlatList,
   Image,
@@ -12,7 +12,7 @@ export default function App() {
 
 
   const [categories, setCategories] = useState([
-    {name: 'exercise', icon: require('../Project-3/assets/exercise.jpg')},
+    {name: 'exercise',},
     {name: 'studies'},
     {name: 'coding'},
     {name: 'sleeping'},
@@ -21,14 +21,14 @@ export default function App() {
   ]);
 
 
-  const task = [
+  const[task, setTask]= useState([
     {taskId: 'Web Development'},
     {taskId: 'Web Development'},
     {taskId: 'Web Development'},
     {taskId: 'Web Development'},
     {taskId: 'Web Development'},
     {taskId: 'Web Development'}
-  ]
+  ]);
 
 
 
@@ -36,48 +36,50 @@ export default function App() {
     <View style={styles.container}>
 
        
-    <StatusBar style="auto" />  
+      <StatusBar style="auto" />  
 
-      <View style={styles.welcome}>
-        <Text style={styles.greetings}>Hello , Devs</Text>
-        <Image source={require('../Project-3/assets/profile photo.jpg')} style={styles.image1}
-        resizeMode='contain'/>
-      </View>
-      <Text style={styles.morale}>1443 tasks today. Good job!</Text>
+        <View style={styles.welcome}>
+          <Text style={styles.greetings}>Hello , Devs</Text>
+          <Image source={require('../Project-3/assets/profile photo.jpg')} style={styles.image1}
+          resizeMode='contain'/>
+        </View>
+        <Text style={styles.morale}>1443 tasks today. Good job!</Text>
 
-      <View style={styles.search}>
-        <TextInput style={styles.searchBar}  placeholder='Search' placeholderTextColor="red"/>
-        <Image source={require('../Project-3/assets/image-1.jpg')} style={styles.image2}
-        resizeMode='contain'/>
-      </View>
+        <View style={styles.search}>
+          <TextInput style={styles.searchBar}  placeholder='Search' placeholderTextColor="red"/>
+          <Image source={require('../Project-3/assets/image-1.jpg')} style={styles.image2}
+          resizeMode='contain'/>
+        </View>
 
-      <View>
-          <Text style={styles.categories}> Categories</Text>
-      </View>
+        <View>
+            <Text style={styles.categories}> Categories</Text>
+        </View>
 
-      <View>
-        
-          <FlatList data={categories}
-          horizontal={true}
-          renderItem={({item})=>(
-            <View style={styles.catBoxes}>
-                <Text style={styles.itemName}> {item.name} </Text>
-                <Text style={styles.taskNumber}>12 tasks</Text>
-            </View>
-          )}/>
+        <View >
+          
+            <FlatList data={categories}
+            horizontal={true}
+            renderItem={({item})=>(
+              <View style={styles.catBoxes}>
+                  <Text style={styles.itemName}> {item.name} </Text>
+                  <Text style={styles.taskNumber}>12 tasks</Text>
+              </View>
+            )}/>
 
-      </View>
+        </View>
 
-      <Text style={styles.ongoing}> Ongoing Task</Text>
-
-      <View> 
-
-        {/* <SectionList /> */}
-      </View>
-
-     
+        <Text style={styles.ongoing}> Ongoing Task</Text>
+            
+        <View>
+        <FlatList data={task}
+            renderItem={({item})=>(
+              <View style={styles.catBoxes2}>
+                  <Text style={styles.itemName}> {item.taskId} </Text>
+              </View>
+            )}/>
+        </View>     
     </View>
-  );
+    );
 }
 
 const styles = StyleSheet.create({
@@ -123,7 +125,8 @@ const styles = StyleSheet.create({
     height: 170, 
     width: 170,
     borderRadius: 20,
-    marginBottom: 30
+    marginBottom: 30,
+    flex:1,
   },
 
   itemName:{
@@ -168,6 +171,16 @@ const styles = StyleSheet.create({
     marginRightTop: 20,
     marginLeft: 50,
     borderRadius: 34
+  },
+
+  catBoxes2:{
+    marginLeft: 20,
+    backgroundColor: 'white',
+    height: 170, 
+    width: 320,
+    borderRadius: 20,
+    marginBottom: 30,
+    flex:1,
   }
 
 
