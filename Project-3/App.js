@@ -12,7 +12,7 @@ export default function App() {
 
 
   const [categories, setCategories] = useState([
-    {name: 'exercise'},
+    {name: 'exercise', icon: require('../Project-3/assets/exercise.jpg')},
     {name: 'studies'},
     {name: 'coding'},
     {name: 'sleeping'},
@@ -38,10 +38,12 @@ export default function App() {
        
     <StatusBar style="auto" />  
 
-      <View>
+      <View style={styles.welcome}>
         <Text style={styles.greetings}>Hello , Devs</Text>
-        <Text style={styles.morale}>1443 tasks today. Good job!</Text>
+        <Image source={require('../Project-3/assets/profile photo.jpg')} style={styles.image1}
+        resizeMode='contain'/>
       </View>
+      <Text style={styles.morale}>1443 tasks today. Good job!</Text>
 
       <View>
         <TextInput style={styles.searchBar}  placeholder='Search' placeholderTextColor="red"/>
@@ -68,7 +70,7 @@ export default function App() {
 
       <View> 
 
-        <SectionList />
+        {/* <SectionList /> */}
       </View>
 
      
@@ -139,6 +141,19 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
     fontSize: 20,
     marginBottom:  15
+  },
+
+  welcome:{
+    flexDirection: 'row',
+  },
+
+  image1:{
+    height: 50,
+    flex:1,
+    marginTop:60,
+    justifyContent: 'flex-end',
+    marginLeft: 120,
+    borderRadius: 25
   }
 });
 
