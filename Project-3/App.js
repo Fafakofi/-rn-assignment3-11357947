@@ -4,7 +4,8 @@ import { StyleSheet, Text, View , Scrollview,
   Stylesheet,
   Button,
   FlatList,
-  Image,} from 'react-native';
+  Image,
+  SectionList,} from 'react-native';
 import React, { useState } from 'react';
 
 export default function App() {
@@ -17,7 +18,19 @@ export default function App() {
     {name: 'sleeping'},
     {name: 'eating'},
     {name: 'Jumping'},
-  ])
+  ]);
+
+
+  const task = [
+    {taskId: 'Web Development'},
+    {taskId: 'Web Development'},
+    {taskId: 'Web Development'},
+    {taskId: 'Web Development'},
+    {taskId: 'Web Development'},
+    {taskId: 'Web Development'}
+  ]
+
+
 
   return (
     <View style={styles.container}>
@@ -50,6 +63,14 @@ export default function App() {
           )}/>
 
       </View>
+
+      <Text style={styles.ongoing}> Ongoing Task</Text>
+
+      <View> 
+
+        <SectionList />
+      </View>
+
      
     </View>
   );
@@ -97,7 +118,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: 170, 
     width: 170,
-    borderRadius: 20
+    borderRadius: 20,
+    marginBottom: 30
   },
 
   itemName:{
@@ -110,6 +132,13 @@ const styles = StyleSheet.create({
   taskNumber:{
     marginLeft:7,
     fontSize: 10
+  },
+
+  ongoing:{
+    marginLeft: 20,
+    fontWeight:'bold',
+    fontSize: 20,
+    marginBottom:  15
   }
 });
 
